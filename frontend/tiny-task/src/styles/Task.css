@@ -1,0 +1,79 @@
+/* Individual task */
+.task {
+  background: white;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.task:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.task.completed {
+  background: #f0f0f0;
+  opacity: 0.7;
+  border-left-color: var(--success-color);
+}
+
+.task.completed .task-title {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Checkbox */
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+/* Task title */
+.task-title {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--dark-color);
+  word-break: break-word;
+}
+
+/* Delete button */
+.task-delete-btn {
+  background: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.task-delete-btn:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.task-delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .task {
+    padding: 12px 15px;
+    gap: 10px;
+  }
+
+  .task-delete-btn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+}

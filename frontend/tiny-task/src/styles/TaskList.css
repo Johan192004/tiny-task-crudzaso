@@ -1,0 +1,48 @@
+/* Task list */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+/* States */
+.loading,
+.error,
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-size: 1.1rem;
+}
+
+.loading {
+  color: var(--primary-color);
+}
+
+.error {
+  color: var(--danger-color);
+  background: #fee;
+  border: 2px solid var(--danger-color);
+}
+
+.empty {
+  color: #999;
+  background: var(--light-color);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .task-list {
+    gap: 10px;
+  }
+
+  .loading,
+  .error,
+  .empty {
+    padding: 30px 15px;
+    font-size: 1rem;
+  }
+}
