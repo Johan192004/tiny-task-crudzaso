@@ -295,18 +295,6 @@ npm run test
 - Displays task information
 - Handles toggle and delete actions
 
-## Future Enhancements
-
-- [ ] Database integration (PostgreSQL/MySQL)
-- [ ] User authentication and authorization
-- [ ] Task categories and tags
-- [ ] Task search and filtering
-- [ ] Task priority levels
-- [ ] Due dates and reminders
-- [ ] User preferences and settings
-- [ ] Mobile responsive optimization
-- [ ] Dark mode support
-
 
 ## Authors
 
