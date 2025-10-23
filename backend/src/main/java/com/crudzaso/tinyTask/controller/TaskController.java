@@ -48,9 +48,9 @@ public class TaskController {
 
     @PostMapping
     public ResponseEntity<?> createTask(@Valid @RequestBody Task task) {
-        taskService.createTask(task);
+        Task returnTask = taskService.createTask(task);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(Map.of("success", true, "message", "Task created", "data", task));
+                .body(Map.of("success", true, "message", "Task created", "data", returnTask));
     }
 
     @PutMapping("/{id}/toggle")
