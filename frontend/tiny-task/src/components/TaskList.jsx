@@ -1,22 +1,21 @@
 import React from "react";
 import Task from "./Task";
-import "../styles/TaskList.css";
 
 const TaskList = ({ tasks, onToggleDone, onDelete, loading, error }) => {
   if (loading) {
-    return <div className="loading">Loading tasks...</div>;
+    return <div className="flex items-center justify-center py-8 text-lg text-gray-400">Loading tasks...</div>;
   }
 
   if (error) {
-    return <div className="error">Error: {error}</div>;
+    return <div className="flex items-center justify-center py-8 text-lg text-red-500">Error: {error}</div>;
   }
 
   if (tasks.length === 0) {
-    return <div className="empty">No tasks. Create one!</div>;
+    return <div className="flex items-center justify-center py-8 text-lg text-gray-400">No tasks. Create one!</div>;
   }
 
   return (
-    <div className="task-list">
+    <div className="space-y-3 w-full max-w-md">
       {tasks.map((task) => (
         <Task
           key={task.id}

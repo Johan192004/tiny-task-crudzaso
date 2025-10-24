@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/AddTaskForm.css";
 
 const AddTaskForm = ({ onAddTask, loading }) => {
   const [title, setTitle] = useState("");
@@ -29,19 +28,25 @@ const AddTaskForm = ({ onAddTask, loading }) => {
   };
 
   return (
-    <form className="add-task-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        placeholder="Write a new task..."
-        className="task-input"
-        disabled={loading}
-      />
-      <button type="submit" className="btn-add" disabled={loading}>
-        {loading ? "Adding..." : "Add"}
-      </button>
-      {error && <div className="form-error">{error}</div>}
+    <form className="w-full max-w-md space-y-3" onSubmit={handleSubmit}>
+      <div className="flex gap-2">
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Write a new task..."
+          className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors disabled:opacity-50"
+          disabled={loading}
+        />
+        <button 
+          type="submit" 
+          className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded transition-colors duration-200 disabled:opacity-50"
+          disabled={loading}
+        >
+          {loading ? "Adding..." : "Add"}
+        </button>
+      </div>
+      {error && <div className="text-red-500 text-sm font-medium">{error}</div>}
     </form>
   );
 };
